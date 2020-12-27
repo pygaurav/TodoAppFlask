@@ -26,4 +26,4 @@ api.add_resource(TodoBucketResource, "/todobucket/<int:bucket_id>")
 if __name__ == "__main__":
     from db import db
     db.init_app(app)
-    app.run(port=5000)
+#     app.run(port=5000) Commented
