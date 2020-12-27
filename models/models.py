@@ -68,11 +68,10 @@ class TodoModel(db.Model):
         db.session.commit()
 
     @classmethod
-    def update_todo(cls, id, name, color, is_completed, bucket_id):
+    def update_todo(cls, id, name, color, bucket_id):
         bm = cls.query.filter_by(id=id).first()
         bm.name = name
         bm.color = color
-        bm.is_completed = is_completed
         bm.bucket_id = bucket_id
         db.session.commit()
 
