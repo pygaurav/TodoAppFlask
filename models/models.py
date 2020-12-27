@@ -7,7 +7,7 @@ class TodoModel(db.Model):
     name = db.Column(db.String(500), nullable=False)
     color = db.Column(db.String(500), nullable=True)
     is_completed = db.Column(db.Boolean, default=False, nullable=False)
-    bucket_id = db.Column(db.Integer, db.ForeignKey('Bucket.id'), nullable=False)
+    bucket_id = db.Column(db.Integer, db.ForeignKey('Bucket.id',ondelete="CASCADE"), nullable=False)
 
     def __init__(self, name, color, is_completed, bucket_id):
         self.name = name
