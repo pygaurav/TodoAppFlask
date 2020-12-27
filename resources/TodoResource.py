@@ -14,7 +14,7 @@ class TodoListResource(Resource):
         color = data.get('color')
         id = data.get('id')
         bucket_id = data.get('bucket_id')
-        TodoModel.update_todo(id, name, color, is_completed, bucket_id)
+        TodoModel.update_todo(id, name, color, bucket_id)
         return jsonify({"data": "Updated Successfully"})
 
 
