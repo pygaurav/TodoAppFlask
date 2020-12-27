@@ -22,9 +22,8 @@ class BucketResource(Resource):
     def put(self):
         data = request.get_json()
         name = data.get('name')
-        color = data.get('color')
         id = data.get('id')
-        BucketModel.update_bucket(id, name, color)
+        BucketModel.update_bucket(id, name)
         return jsonify({"data": "Updated Successfully"})
 
 

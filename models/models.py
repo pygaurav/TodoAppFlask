@@ -130,10 +130,9 @@ class BucketModel(db.Model):
         db.session.commit()
 
     @classmethod
-    def update_bucket(cls, id, name, color):
+    def update_bucket(cls, id, name):
         bm = cls.query.filter_by(id=id).first()
         bm.name = name
-        bm.color = color
         db.session.commit()
 
     def __repr__(self):
